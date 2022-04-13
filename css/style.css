@@ -1,0 +1,267 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Monda';
+    font-style: normal;
+    font-weight: normal;
+    background-color: #c0c0c0;
+    color: #3E3B3B;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+ul>li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    padding: 0;
+    margin: 0;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.main{
+    font-size: 18px;    
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header__task {
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 0.25em;
+}
+
+.main__title {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.main__title input {
+    background: #C4C4C4;
+    border-radius: 8px;
+    width: 50%;
+    height: 40px;
+    padding: 6px 0 6px 27px;
+    background: linear-gradient(rgb(0, 87, 184), rgb(255, 216, 0));
+    /* background: linear-gradient(90deg, #A8D2A5 0%, #ACD4E1 115.2%); */
+    box-shadow: 0px 4px 4px #ACD4E1;
+}
+
+.main__decription{ 
+    margin-top: 2.9rem;
+    text-align: center;
+}
+
+.main__decription input{
+    background: #C4C4C4;
+    border-radius: 8px;
+    width: 50%;
+    height: 2.5rem;
+    padding: 6px 0 6px 27px;
+    /* background: linear-gradient(90deg, #A8D2A5 0%, #ACD4E1 115.2%); */
+    background: linear-gradient(rgb(0, 87, 184), rgb(255, 216, 0));
+    box-shadow: 0px 4px 4px #ACD4E1;
+}
+
+input::placeholder{
+    color: #3E3B3B;
+    letter-spacing: 2px;
+}
+
+.main__add{
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.add__task {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 3.7rem;
+    letter-spacing: 2px;
+    align-items: center;
+    background: linear-gradient(rgb(0, 87, 184), rgb(255, 216, 0));
+    /* background: linear-gradient(90deg, #A8D2A5 0%, #ACD4E1 115.2%); */
+    box-shadow: 0px 4px 4px #ACD4E1;
+    border-radius: 25px;
+}
+
+.newadd {
+    display: flex;
+    margin-top: 2.5rem;
+    padding-left: 25%;
+}
+
+.newadd__task {
+    border-bottom: 1px solid black;
+    width: 65%;
+    color: honeydew;
+    overflow: hidden;
+}
+
+.newadd__task::before{
+    content: 'Task:';
+    padding-right: 5px;
+    color: rgb(0, 87, 184);
+    font-weight: bold;
+}
+
+.desc__block {
+    display: flex;
+    padding-left: 25%;
+    color: honeydew;
+    overflow: hidden;
+}
+
+.desc__block::before{
+    content: 'Description:';
+    padding-right: 5px;
+    color: rgb(255, 216, 0);
+    font-weight: bold;
+}
+
+.edit{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: url(../img/edit.svg) center center/cover no-repeat;
+}
+
+.edit:hover {
+    transform: scale(1.2);
+}
+
+.delete {
+    margin-left: 7px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: url(../img/delete.svg) center center/cover no-repeat;
+}
+
+.delete:hover {
+    transform: scale(1.2);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.9rem;
+}
+
+.footer__list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+    background: linear-gradient(rgb(0, 87, 184), rgb(255, 216, 0));
+    border-radius: 10px;
+}
+
+.btn {
+    min-width: 1rem;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase; 
+    /* padding: 10px 15px;
+    margin: 30px 25px; */
+    /* font-size: 20px; */
+    transition: 0.5s;
+    border-radius: 0.5rem;
+}
+
+.btn:hover {
+    /* background: linear-gradient(90deg, #A8D2A5 0%, #ACD4E1 115.2%); */
+    border: 5px solid lighten;
+    /* color: ; */
+    cursor: pointer;
+    background: linear-gradient(90deg, #A8D2A5 0%, #ACD4E1 115.2%);
+  }
+
+.blue {
+    background-color: rgba(0, 87, 184, 0.4);
+    border: 2px solid rgb(0, 87, 184);
+}
+
+.yellow {
+    background-color: rgba(255, 216, 0, 0.8);
+    border: 2px solid rgb(249, 230, 125);
+}
+
+@media (max-width:500px) {
+
+    .main__title input {
+        width: 80%;
+        height: 30px;
+    }
+
+    .main__decription input {
+        width: 80%;
+        height: 30px;
+    }
+
+    .add__task {
+        width: 80%;
+        height: 2.5rem;
+    }
+
+    .main__block {
+        width: 90%;
+    }
+
+    .newadd {
+        padding-left: 15%;
+    }
+
+    .newadd__task {
+        width: 90%;
+    }
+
+    .desc__block {
+        padding-left: 15%;
+    }
+
+    .footer__list {
+        width: 80%;
+        height: 2.5rem;
+    }
+
+    .btn {
+        text-transform: none;
+        transition: 0.5s;
+        border-radius: 0.5rem;
+    }
+}
