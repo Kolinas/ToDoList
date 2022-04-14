@@ -35,30 +35,52 @@ document.addEventListener('DOMContentLoaded', () => {
         const taskEdit = document.querySelectorAll('.newadd__task')
           
         document.querySelectorAll('.edit').forEach((btn, index) => {
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener('click', (event) => {
+                event.stopPropagation()
                 taskEdit[index].setAttribute('contentEditable', true);
                 taskEdit[index].focus()
                 taskEdit[index].style.cssText = ` 
                 box-shadow: 0px 0px 0px 1px red;
                 outline: none;
-                `
+                `                
+                btn.classList.add('accept')
+
+                const titleEditMode = () => {
+
+                    if (taskEdit[index].innerText.length > 15) {
+                        dataBase[index].title = taskEdit[index].innerText.slice(0,16);
+                        taskEdit[index].removeAttribute('contentEditable');
+                    }else {
+                        dataBase[index].title = taskEdit[index].innerText;
+                        taskEdit[index].removeAttribute('contentEditable');
+                    }
+                }
+
+                btn.addEventListener('click' , () => {
+                    titleEditMode()
+                    createToDoList();
+                })
+
+                document.addEventListener('click', function click(e) {
+                    if (e.target === taskEdit[index]) {
+                    }else {
+                        titleEditMode()
+                        createToDoList();
+                        document.removeEventListener('click', click)
+                    }
+                })
+
                 document.addEventListener('keydown', (e) => {
                     const code = e.code;
                     if (code === 'Enter' && taskEdit[index].classList.contains('newadd__task')) {
-                        dataBase[index].title = taskEdit[index].innerText;
-                        taskEdit[index].removeAttribute('contentEditable');
+                        titleEditMode()
                         createToDoList();
                     }
                 });
-
-                document.querySelector('#edit').addEventListener('click', (e) => {
-                    dataBase[index].title = taskEdit[index].innerText;
-                    taskEdit[index].removeAttribute('contentEditable');
-                    createToDoList();
-                })
             });
         });
     }
+
 
     const addNewTask = () => {
         let newTitle = newTask.value; 

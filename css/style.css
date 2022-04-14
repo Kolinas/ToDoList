@@ -126,7 +126,7 @@ input::placeholder{
 
 .newadd__task {
     border-bottom: 1px solid black;
-    width: 65%;
+    width: 62%;
     color: honeydew;
     overflow: hidden;
 }
@@ -157,10 +157,15 @@ input::placeholder{
     width: 20px;
     height: 20px;
     background: url(../img/edit.svg) center center/cover no-repeat;
+    margin-left: 7px;
 }
 
 .edit:hover {
     transform: scale(1.2);
+}
+
+.accept {
+    background: url(../img/accept.svg) center center/cover no-repeat;
 }
 
 .delete {
