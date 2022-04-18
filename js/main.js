@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const taskEdit = document.querySelectorAll('.newadd__task')
+        const descEdit = document.querySelectorAll('.desc__block')
           
         document.querySelectorAll('.edit').forEach((btn, index) => {
             btn.addEventListener('click', (event) => {
@@ -85,18 +86,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const addNewTask = () => {
         let newTitle = newTask.value; 
         let newDescription = newDesc.value;
+        
+        if (!newTitle) {
+            newTask.style.border = '2px solid red'
+            newTask.focus()
+        } else {
+            newTask.style.border = 'none'
+        }
+
         if (newTitle) {
 
             if (newTitle.length > 15) {
                 newTitle = newTitle.slice(0,16)
             }
 
-            if (newTitle.length > 20) {
+            if (newDescription.length > 20) {
                 newDescription = newDescription.slice(0,21)
             }
 
             dataBase.push({title:newTitle, description:newDescription}); 
         }
+
         formAdd.reset();
          createToDoList()
     }
