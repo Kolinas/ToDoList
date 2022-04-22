@@ -116,6 +116,15 @@ input::placeholder{
     /* background: linear-gradient(90deg, #A8D2A5 0%, #ACD4E1 115.2%); */
     box-shadow: 0px 4px 4px #ACD4E1;
     border-radius: 25px;
+    flex-direction: column;
+}
+
+.add__task div {
+    color: honeydew;
+}
+
+.add__task span {
+    color: red;
 }
 
 .newadd {
@@ -129,6 +138,7 @@ input::placeholder{
     width: 62%;
     color: honeydew;
     overflow: hidden;
+    word-break: break-all;
 }
 
 .newadd__task::before{
@@ -140,9 +150,11 @@ input::placeholder{
 
 .desc__block {
     display: flex;
-    padding-left: 25%;
     color: honeydew;
     overflow: hidden;
+    margin-left: 25%;
+    width: 46.5%;
+    word-break: break-all;
 }
 
 .desc__block::before{
