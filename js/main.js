@@ -168,9 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
         taskArea.innerHTML = '';
         dataBase.length = 0;
         localStorage.clear()
-        // console.log(dataBase.map(el => el.title) === localStorage.getItem('t').split(','));
-        let arr = []
-        console.log(JSON.parse(localStorage.getItem('title'))); 
-        console.log(dataBase);
+        taskCounter.innerHTML = localStorage.length;
     })
 });
