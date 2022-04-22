@@ -165,8 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
     addTask.addEventListener('click', addNewTask)
 
     clearAllTasks.addEventListener('click', (e) => {
-        // taskArea.innerHTML = '';
-        // dataBase.length = 0;
+        taskArea.innerHTML = '';
+        dataBase.length = 0;
         localStorage.clear()
         // console.log(dataBase.map(el => el.title) === localStorage.getItem('t').split(','));
         let arr = []
