@@ -95,7 +95,7 @@ input {
 }
 
 input::placeholder{
-    color: #3E3B3B;
+    color: honeydew;
     letter-spacing: 2px;
 }
 
@@ -268,7 +268,8 @@ input::placeholder{
     }
 
     .desc__block {
-        padding-left: 15%;
+        width: 75%;
+        margin-left: 15%;
     }
 
     .footer__list {
